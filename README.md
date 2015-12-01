@@ -2,4 +2,6 @@
 
 [![Build Status](https://travis-ci.org/FranklinChen/twenty-four-days2015-of-hackage.png)](https://travis-ci.org/FranklinChen/twenty-four-days2015-of-hackage)
 
-TODO Description
+Code to accompany my article series "24 days of Hackage, 2015".
+
+- Day 1: [Introduction and Stack](http://conscientiousprogrammer.com/blog/2015/11/30/haskell-tidbits-24-days-of-hackage-2015-day-1-introduction-and-stack/)
