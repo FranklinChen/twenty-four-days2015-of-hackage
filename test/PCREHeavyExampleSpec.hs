@@ -1,14 +1,11 @@
 module PCREHeavyExampleSpec where
 
-import Test.Hspec
-
 import PCREHeavyExample (mediaRegex)
 
+import Test.Hspec (Spec, hspec, describe, it, shouldSatisfy)
 import Text.Regex.PCRE.Heavy ((=~))
 
-main :: IO ()
-main = hspec spec
-
+-- | Required for auto-discovery.
 spec :: Spec
 spec =
   describe "pcre-heavy" $ do
@@ -19,12 +16,12 @@ spec =
 
 matchSpec :: (String, String) -> Spec
 matchSpec (description, text) =
-  it description $do
+  it description $ do
     text `shouldSatisfy` (=~ mediaRegex)
 
 nonMatchSpec :: (String, String) -> Spec
 nonMatchSpec (description, text) =
-  it description $do
+  it description $ do
     text `shouldSatisfy` (not . (=~ mediaRegex))
 
 matchExamples :: [(String, String)]
@@ -52,3 +49,7 @@ nonMatchExamples =
     , "@Media:\tmissing-media-field, unlinked"
     )
   ]
+
+-- | Just for our convenience to manually run just this module's tests.
+main :: IO ()
+main = hspec spec
