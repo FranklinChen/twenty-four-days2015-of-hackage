@@ -4,7 +4,7 @@ import Test.Hspec
 
 import PCREHeavyExample (mediaRegex)
 
-import Text.Regex.PCRE.Heavy
+import Text.Regex.PCRE.Heavy ((=~))
 
 main :: IO ()
 main = hspec spec
