@@ -8,21 +8,28 @@ import Text.Regex.PCRE.Heavy ((=~))
 -- | Required for auto-discovery.
 spec :: Spec
 spec =
-  describe "pcre-heavy" $ do
-    describe "match" $ do
-      mapM_ matchSpec matchExamples
-    describe "no match" $ do
-      mapM_ nonMatchSpec nonMatchExamples
+  describePredicate "pcre-heavy"
+    ("match", (=~ mediaRegex))
+    (matchExamples, nonMatchExamples)
 
-matchSpec :: (String, String) -> Spec
-matchSpec (description, text) =
-  it description $ do
-    text `shouldSatisfy` (=~ mediaRegex)
+describePredicate :: Show a =>
+     String                           -- ^ description
+  -> (String, a -> Bool)              -- ^ (base description, predicate)
+  -> ( [(String, a)], [(String, a)] ) -- ^ positive and negative examples
+  -> Spec
+describePredicate description
+                  (baseDescription, predicate)
+                  (positiveExamples, negativeExamples) =
+  describe description $ do
+    describe baseDescription $ do
+      mapM_ (predSpec predicate) positiveExamples
+    describe ("not " ++ baseDescription) $ do
+      mapM_ (predSpec (not . predicate)) negativeExamples
 
-nonMatchSpec :: (String, String) -> Spec
-nonMatchSpec (description, text) =
+predSpec :: Show a => (a -> Bool) -> (String, a) -> Spec
+predSpec predicate (description, a) =
   it description $ do
-    text `shouldSatisfy` (not . (=~ mediaRegex))
+    a `shouldSatisfy` predicate
 
 matchExamples :: [(String, String)]
 matchExamples =
