@@ -19,8 +19,15 @@ library
   ghc-options:         -Wall
   hs-source-dirs:      src
   exposed-modules:     PCREHeavyExample
+                     , WreqExample
+                     , WreqCodeGolfExample
   build-depends:       base >= 4.7 && < 5
                      , pcre-heavy
+                     , wreq
+                     , text
+                     , lens
+                     , aeson
+                     , lens-aeson
 
 executable pcre-heavy-example
   hs-source-dirs:      app
@@ -42,6 +49,11 @@ test-suite spec
                      , hspec
                      , QuickCheck
                      , pcre-heavy
+                     , wreq
+                     , text
+                     , lens
+                     , aeson
+                     , lens-aeson
 
 source-repository head
   type:                 git
