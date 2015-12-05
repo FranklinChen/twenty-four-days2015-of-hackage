@@ -13,7 +13,8 @@ Code to accompany my article series "24 days of Hackage, 2015".
 Haskell sort of dynamically typed with deferred type errors](http://conscientiousprogrammer.com/blog/2015/12/05/24-days-of-hackage-2015-day-5-should-not-typecheck-making-haskell-sort-of-dynamically-typed-with-deferred-type-errors/)
 - Day 6: [finding utilities with Hoogle
 and Hayoo: MissingH, extra](http://conscientiousprogrammer.com/blog/2015/12/06/24-days-of-hackage-2015-day-6-finding-utilities-with-hoogle-and-hayoo-missingh-extra/)
-- Day 7:
+- Day 7: [semigroups; NonEmpty list and
+a case study of types and tests](http://conscientiousprogrammer.com/blog/2015/12/07/24-days-of-hackage-2015-day-7-semigroups-nonempty-list-and-a-case-study-of-types-and-tests/)
 - Day 8:
 - Day 9:
 - Day 10:
