@@ -21,6 +21,7 @@ library
   exposed-modules:     PCREHeavyExample
                      , WreqExample
                      , WreqCodeGolfExample
+                     , ShouldNotTypecheckExample
   build-depends:       base >= 4.7 && < 5
                      , pcre-heavy
                      , wreq
@@ -36,6 +37,7 @@ executable pcre-heavy-example
   ghc-options:         -Wall
   build-depends:       base >= 4 && <= 5
                      , pcre-heavy
+                     , twenty-four-days2015-of-hackage
 
 test-suite spec
   type: exitcode-stdio-1.0
@@ -54,6 +56,8 @@ test-suite spec
                      , lens
                      , aeson
                      , lens-aeson
+                     , should-not-typecheck
+                     , deepseq
 
 source-repository head
   type:                 git
