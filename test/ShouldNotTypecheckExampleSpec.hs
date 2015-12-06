@@ -5,7 +5,7 @@ module ShouldNotTypecheckExampleSpec where
 import ShouldNotTypecheckExample (thisWorks, thisFails)
 
 import Test.Hspec ( Spec, hspec, describe, it
-                  , shouldBe, shouldReturn
+                  , shouldBe
                   , shouldThrow, anyException
                   )
 import Test.ShouldNotTypecheck (shouldNotTypecheck)

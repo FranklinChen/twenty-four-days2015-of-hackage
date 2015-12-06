@@ -11,7 +11,8 @@ Code to accompany my article series "24 days of Hackage, 2015".
   [wreq: Web client programming; with notes on lens and operator syntax](http://conscientiousprogrammer.com/blog/2015/12/04/24-days-of-hackage-2015-day-4-wreq-web-client-programming-with-notes-on-lens-and-operator-syntax/)
 - Day 5: [should-not-typecheck: making
 Haskell sort of dynamically typed with deferred type errors](http://conscientiousprogrammer.com/blog/2015/12/05/24-days-of-hackage-2015-day-5-should-not-typecheck-making-haskell-sort-of-dynamically-typed-with-deferred-type-errors/)
-- Day 6:
+- Day 6: [finding utilities with Hoogle
+and Hayoo: MissingH, extra](http://conscientiousprogrammer.com/blog/2015/12/06/24-days-of-hackage-2015-day-6-finding-utilities-with-hoogle-and-hayoo-missingh-extra/)
 - Day 7:
 - Day 8:
 - Day 9:

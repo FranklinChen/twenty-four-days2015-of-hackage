@@ -58,6 +58,8 @@ test-suite spec
                      , lens-aeson
                      , should-not-typecheck
                      , deepseq
+                     , MissingH
+                     , extra
 
 source-repository head
   type:                 git
