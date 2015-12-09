@@ -27,6 +27,18 @@ wordCount =
   >>> mconcat
   >>> LazyBuilder.toLazyText
 
+-- | Same thing, using traditional right-to-left composition.
+wordCountTraditional :: LazyText.Text -> LazyText.Text
+wordCountTraditional =
+  LazyBuilder.toLazyText
+  . mconcat
+  . map summarizeWordCount
+  . List.sortOn (Down . snd)
+  . MultiSet.toOccurList
+  . MultiSet.fromList
+  . LazyText.words
+  . LazyText.map replaceNonLetterWithSpace
+
 replaceNonLetterWithSpace :: Char -> Char
 replaceNonLetterWithSpace c
   | Char.isLetter c = c
