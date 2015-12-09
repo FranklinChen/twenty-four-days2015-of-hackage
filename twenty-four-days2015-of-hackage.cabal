@@ -36,6 +36,9 @@ library
                      , semigroups
                      , split
                      , multiset
+                     , here
+                     , interpolate
+                     , file-embed
 
 executable pcre-heavy-example
   hs-source-dirs:      app
@@ -72,6 +75,9 @@ test-suite spec
                      , semigroups
                      , split
                      , multiset
+                     , here
+                     , interpolate
+                     , file-embed
 
 source-repository head
   type:                 git
