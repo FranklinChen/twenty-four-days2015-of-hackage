@@ -26,6 +26,10 @@ library
                      , NonEmptyListExample
                      , Sort3
                      , MultisetExample
+                     , SymbolicDifferentiation.AlphaSyntax
+                     , SymbolicDifferentiation.AlphaOperatorSyntax
+                     , SymbolicDifferentiation.OperatorSyntax
+                     , SymbolicDifferentiation.SExp
   build-depends:       base >= 4.7 && < 5
                      , pcre-heavy
                      , wreq
@@ -39,6 +43,7 @@ library
                      , here
                      , interpolate
                      , file-embed
+                     , s-cargot
 
 executable pcre-heavy-example
   hs-source-dirs:      app
@@ -78,7 +83,8 @@ test-suite spec
                      , here
                      , interpolate
                      , file-embed
-
+                     , s-cargot
+                     
 source-repository head
   type:                 git
   location:             https://github.com/FranklinChen/twenty-four-days2015-of-hackage
