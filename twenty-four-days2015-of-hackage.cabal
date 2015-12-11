@@ -30,6 +30,7 @@ library
                      , SymbolicDifferentiation.AlphaOperatorSyntax
                      , SymbolicDifferentiation.OperatorSyntax
                      , SymbolicDifferentiation.SExp
+                     , MonadLoopsExample
   build-depends:       base >= 4.7 && < 5
                      , pcre-heavy
                      , wreq
@@ -44,6 +45,7 @@ library
                      , interpolate
                      , file-embed
                      , s-cargot
+                     , monad-loops
 
 executable pcre-heavy-example
   hs-source-dirs:      app
@@ -84,6 +86,7 @@ test-suite spec
                      , interpolate
                      , file-embed
                      , s-cargot
+                     , monad-loops
                      
 source-repository head
   type:                 git
