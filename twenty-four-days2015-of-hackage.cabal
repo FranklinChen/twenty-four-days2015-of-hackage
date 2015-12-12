@@ -18,6 +18,7 @@ library
   default-language:    Haskell2010
   ghc-options:         -Wall
   hs-source-dirs:      src
+                     , generated-src
   exposed-modules:     PCREHeavyExample
                      , WreqExample
                      , WreqCodeGolfExample
@@ -31,7 +32,10 @@ library
                      , SymbolicDifferentiation.OperatorSyntax
                      , SymbolicDifferentiation.SExp
                      , MonadLoopsExample
+                     , MeetupEventsJSON
+                     , JSONAutoTypeExample
   build-depends:       base >= 4.7 && < 5
+                     , bytestring
                      , pcre-heavy
                      , wreq
                      , text
@@ -46,7 +50,8 @@ library
                      , file-embed
                      , s-cargot
                      , monad-loops
-
+                     , json-autotype
+                     
 executable pcre-heavy-example
   hs-source-dirs:      app
   main-is:             PCREHeavyExampleMain.hs
@@ -62,6 +67,7 @@ test-suite spec
                      -- Hack? Easiest for rerunning tests in "stack ghci :spec"
                      -- and reloading.
                      , src
+                     , generated-src
   ghc-options:         -Wall
   main-is:             Spec.hs
   build-depends:       base >= 4 && <= 5
@@ -69,6 +75,7 @@ test-suite spec
                      --, twenty-four-days2015-of-hackage
                      , hspec
                      , QuickCheck
+                     , bytestring
                      , pcre-heavy
                      , wreq
                      , text
@@ -87,6 +94,7 @@ test-suite spec
                      , file-embed
                      , s-cargot
                      , monad-loops
+                     , json-autotype
                      
 source-repository head
   type:                 git
