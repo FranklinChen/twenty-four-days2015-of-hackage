@@ -34,6 +34,8 @@ library
                      , MonadLoopsExample
                      , MeetupEventsJSON
                      , JSONAutoTypeExample
+                     , SortWrapper
+                     , HintExample
   build-depends:       base >= 4.7 && < 5
                      , bytestring
                      , pcre-heavy
@@ -51,7 +53,9 @@ library
                      , s-cargot
                      , monad-loops
                      , json-autotype
-                     
+                     , hint
+                     , transformers
+                                          
 executable pcre-heavy-example
   hs-source-dirs:      app
   main-is:             PCREHeavyExampleMain.hs
@@ -95,6 +99,8 @@ test-suite spec
                      , s-cargot
                      , monad-loops
                      , json-autotype
+                     , hint
+                     , transformers
                      
 source-repository head
   type:                 git
