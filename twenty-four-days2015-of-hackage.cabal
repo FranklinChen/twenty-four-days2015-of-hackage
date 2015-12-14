@@ -36,6 +36,7 @@ library
                      , JSONAutoTypeExample
                      , SortWrapper
                      , HintExample
+                     , SymbolicDifferentiation.Earley
   build-depends:       base >= 4.7 && < 5
                      , bytestring
                      , pcre-heavy
@@ -55,6 +56,8 @@ library
                      , json-autotype
                      , hint
                      , transformers
+                     , ListLike
+                     , Earley
                                           
 executable pcre-heavy-example
   hs-source-dirs:      app
@@ -101,6 +104,8 @@ test-suite spec
                      , json-autotype
                      , hint
                      , transformers
+                     , ListLike
+                     , Earley
                      
 source-repository head
   type:                 git
