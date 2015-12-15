@@ -37,6 +37,8 @@ library
                      , SortWrapper
                      , HintExample
                      , SymbolicDifferentiation.Earley
+                     , EarleyExample
+                     , IOSpecExample
   build-depends:       base >= 4.7 && < 5
                      , bytestring
                      , pcre-heavy
@@ -58,6 +60,7 @@ library
                      , transformers
                      , ListLike
                      , Earley
+                     , IOSpec
                                           
 executable pcre-heavy-example
   hs-source-dirs:      app
@@ -106,6 +109,7 @@ test-suite spec
                      , transformers
                      , ListLike
                      , Earley
+                     , IOSpec
                      
 source-repository head
   type:                 git

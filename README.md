@@ -22,7 +22,7 @@ a case study of types and tests](http://conscientiousprogrammer.com/blog/2015/12
 - Day 12: [json-autotype: inferring types from data](http://conscientiousprogrammer.com/blog/2015/12/12/24-days-of-hackage-2015-day-12-json-autotype-inferring-types-from-data/)
 - Day 13: [hint: runtime eval for Haskell](http://conscientiousprogrammer.com/blog/2015/12/13/24-days-of-hackage-2015-day-13-hint-runtime-eval-for-haskell/)
 - Day 14: [Earley: a promising newer parser library for Haskell](http://conscientiousprogrammer.com/blog/2015/12/14/24-days-of-hackage-2015-day-14-earley-a-promising-newer-parser-library-for-haskell/)
-- Day 15:
+- Day 15: [IOSpec: testing IO; and some QuickCheck tricks](http://conscientiousprogrammer.com/blog/2015/12/15/24-days-of-hackage-2015-day-15-iospec-testing-io-and-some-quickcheck-tricks/)
 - Day 16:
 - Day 17:
 - Day 18:
