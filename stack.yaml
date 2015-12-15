@@ -16,6 +16,7 @@ extra-deps:
 # needed for nightly
 - IOSpec-0.3
 - Stream-0.4.7.2
+- lazysmallcheck-0.6
 
 # Override default flag values for local packages and extra-deps
 flags: {}
