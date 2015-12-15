@@ -18,7 +18,7 @@ logIn = do
       if guess /= "secret"
         then do
           putStrLn "% Wrong password!"
-          putStrLn " Try again:"
+          putStrLn "% Try again:"
           go
         else
           return ()
