@@ -23,7 +23,7 @@ a case study of types and tests](http://conscientiousprogrammer.com/blog/2015/12
 - Day 13: [hint: runtime eval for Haskell](http://conscientiousprogrammer.com/blog/2015/12/13/24-days-of-hackage-2015-day-13-hint-runtime-eval-for-haskell/)
 - Day 14: [Earley: a promising newer parser library for Haskell](http://conscientiousprogrammer.com/blog/2015/12/14/24-days-of-hackage-2015-day-14-earley-a-promising-newer-parser-library-for-haskell/)
 - Day 15: [IOSpec: testing IO; and some QuickCheck tricks](http://conscientiousprogrammer.com/blog/2015/12/15/24-days-of-hackage-2015-day-15-iospec-testing-io-and-some-quickcheck-tricks/)
-- Day 16:
+- Day 16: [safe; what is safety anyway?](http://conscientiousprogrammer.com/blog/2015/12/16/24-days-of-hackage-2015-day-16-safe-what-is-safety-anyway/)
 - Day 17:
 - Day 18:
 - Day 19:

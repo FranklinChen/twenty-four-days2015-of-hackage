@@ -39,6 +39,7 @@ library
                      , SymbolicDifferentiation.Earley
                      , EarleyExample
                      , IOSpecExample
+                     , SafeExample
   build-depends:       base >= 4.7 && < 5
                      , bytestring
                      , pcre-heavy
@@ -61,6 +62,7 @@ library
                      , ListLike
                      , Earley
                      , IOSpec
+                     , safe
                                           
 executable pcre-heavy-example
   hs-source-dirs:      app
@@ -110,7 +112,8 @@ test-suite spec
                      , ListLike
                      , Earley
                      , IOSpec
-                     
+                     , safe
+                                          
 source-repository head
   type:                 git
   location:             https://github.com/FranklinChen/twenty-four-days2015-of-hackage
