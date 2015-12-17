@@ -3,23 +3,17 @@ module EarleyExampleSpec where
 import EarleyExample (grammar, NumberWord, Expected)
 import qualified Text.Earley as E
 import qualified Data.List.NonEmpty as NonEmpty
-import qualified Data.List as List
 
-import Test.Hspec (Spec, hspec, describe, it, shouldBe, shouldSatisfy)
-import Test.Hspec.QuickCheck (prop)
-import Test.QuickCheck ((==>))
+import Test.Hspec (Spec, hspec, describe, it, shouldMatchList)
 
 -- | Required for auto-discovery.
 spec :: Spec
 spec =
   describe "EarleyExample" $ do
     it "returns all possible parses of number words" $ do
-      parseNumberWord 1234 `shouldSatisfy` \(result, _) ->
-        List.sort result ==
-        List.sort [ NonEmpty.fromList "ABCD"
-                  , NonEmpty.fromList "AWD"
-                  , NonEmpty.fromList "LCD"
-                  ]
+      let (result, _) = parseNumberWord 1234
+      map NonEmpty.toList result `shouldMatchList`
+        ["ABCD", "AWD", "LCD"]
 
 parseNumberWord :: Integer -> ([NumberWord], E.Report Expected String)
 parseNumberWord = E.fullParses (E.parser grammar) . show
