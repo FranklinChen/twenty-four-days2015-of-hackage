@@ -11,12 +11,17 @@ packages:
 extra-deps:
 - should-not-typecheck-2.0.1
 - s-cargot-0.1.0.0
+
+# Use the latest version because fast-moving
 - Earley-0.10.1.0
 
-# needed for nightly
+# For IOSpec; needed for nightly
 - IOSpec-0.3
 - Stream-0.4.7.2
 - lazysmallcheck-0.6
+
+# Because LTS 3 is at 0.10.12.3
+- vector-0.11.0.0
 
 # Override default flag values for local packages and extra-deps
 flags: {}

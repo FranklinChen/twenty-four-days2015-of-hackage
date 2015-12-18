@@ -41,6 +41,7 @@ library
                      , IOSpecExample
                      , SafeExample
                      , SymbolicDifferentiation.AnsiWlPprint
+                     , VectorExample
   build-depends:       base >= 4.7 && < 5
                      , bytestring
                      , pcre-heavy
@@ -61,11 +62,13 @@ library
                      , hint
                      , transformers
                      , ListLike
-                     , Earley
+                     , Earley >= 0.10
                      , IOSpec
                      , safe
                      , ansi-wl-pprint
-                                          
+                     , vector >= 0.11
+                     , vector-algorithms
+                     
 executable pcre-heavy-example
   hs-source-dirs:      app
   main-is:             PCREHeavyExampleMain.hs
@@ -112,11 +115,13 @@ test-suite spec
                      , hint
                      , transformers
                      , ListLike
-                     , Earley
+                     , Earley >= 0.10
                      , IOSpec
                      , safe
                      , ansi-wl-pprint
-
+                     , vector >= 0.11
+                     , vector-algorithms
+                     
 source-repository head
   type:                 git
   location:             https://github.com/FranklinChen/twenty-four-days2015-of-hackage
