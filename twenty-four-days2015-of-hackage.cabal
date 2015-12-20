@@ -43,6 +43,7 @@ library
                      , SymbolicDifferentiation.AnsiWlPprint
                      , VectorExample
                      , VectorFusionExample
+                     , DimensionalExample
   build-depends:       base >= 4.7 && < 5
                      , bytestring
                      , pcre-heavy
@@ -70,6 +71,7 @@ library
                      , vector >= 0.11
                      , vector-algorithms
                      , list-fusion-probe
+                     , dimensional >= 1.0.1.0
                      
 executable pcre-heavy-example
   hs-source-dirs:      app
@@ -124,7 +126,8 @@ test-suite spec
                      , vector >= 0.11
                      , vector-algorithms
                      , list-fusion-probe
-                                          
+                     , dimensional >= 1.0.1.0
+
 source-repository head
   type:                 git
   location:             https://github.com/FranklinChen/twenty-four-days2015-of-hackage
