@@ -24,7 +24,7 @@ extra-deps:
 - vector-0.11.0.0
 
 # Because LTS 3 is way behind
-- dimensional-1.0.1.0
+- dimensional-1.0.1.1
 - exact-pi-0.4.1.0
 - numtype-dk-0.5
 
