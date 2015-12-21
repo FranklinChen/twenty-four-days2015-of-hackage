@@ -29,7 +29,7 @@ a case study of types and tests](http://conscientiousprogrammer.com/blog/2015/12
 - Day 19: [ghc-core-html,
 list-fusion-probe; checking GHC's fusion rewrite rules for erasing intermediate data from existence](http://conscientiousprogrammer.com/blog/2015/12/19/24-days-of-hackage-2015-day-19-ghc-core-html-list-fusion-probe-checking-ghcs-fusion-rewrite-rules-for-erasing-intermediate-data-from-existence/)
 - Day 20: [dimensional: type-checked computation on physical quantities with units](http://conscientiousprogrammer.com/blog/2015/12/20/24-days-of-hackage-2015-day-20-dimensional-type-checked-computation-on-physical-quantities-with-units/)
-- Day 21:
+- Day 21: [hood, GHood, Hoed: observation oriented debugging in Haskell](http://conscientiousprogrammer.com/blog/12/21/24-days-of-hackage-2015-day-21-hood-ghood-hoed-observation-oriented-debugging-in-haskell/)
 - Day 22:
 - Day 23:
 - Day 24:

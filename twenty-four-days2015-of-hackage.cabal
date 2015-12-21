@@ -44,6 +44,9 @@ library
                      , VectorExample
                      , VectorFusionExample
                      , DimensionalExample
+                     , HoodExample
+                     , GHoodExample
+--                     , HoedExample
   build-depends:       base >= 4.7 && < 5
                      , bytestring
                      , pcre-heavy
@@ -72,6 +75,9 @@ library
                      , vector-algorithms
                      , list-fusion-probe
                      , dimensional >= 1.0.1.0
+                     , hood
+                     , GHood
+--                     , Hoed
                      
 executable pcre-heavy-example
   hs-source-dirs:      app
@@ -127,6 +133,9 @@ test-suite spec
                      , vector-algorithms
                      , list-fusion-probe
                      , dimensional >= 1.0.1.0
+                     , hood
+                     , GHood
+--                     , Hoed
 
 source-repository head
   type:                 git
