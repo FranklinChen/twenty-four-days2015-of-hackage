@@ -6,3 +6,4 @@
 *.o
 ObserveEvents.log
 /.Hoed/
+/_build/
