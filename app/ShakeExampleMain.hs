@@ -11,7 +11,6 @@ import Text.Regex.PCRE.Heavy (Regex, scan)
 import Data.Maybe (listToMaybe)
 import Text.Printf (printf)
 import Control.Monad (zipWithM)
-import qualified System.IO.Strict as Strict
 
 shakeDir :: FilePath
 shakeDir = "_build"
@@ -55,7 +54,7 @@ main = shakeArgs shakeOptions{shakeFiles=shakeDir} $ do
     sourcePaths <- readFileLines daysSources
     urls <- readFileLines daysUrls
 
-    toc <- liftIO $ zipWithM extractTOCEntry sourcePaths urls
+    toc <- zipWithM extractTOCEntry sourcePaths urls
     writeFileChanged out $ unlines $ map formatTOCEntry toc
 
   -- Run Hugo to generate a directory for each post.
@@ -80,9 +79,9 @@ data TOCEntry =
 dayTitleRegex :: Regex
 dayTitleRegex = [multilineRe|^title:.*day\s+(\d+):\s*([^"]+)|]
 
-extractTOCEntry :: FilePath -> String -> IO TOCEntry
+extractTOCEntry :: FilePath -> String -> Action TOCEntry
 extractTOCEntry sourcePath url = do
-  text <- Strict.readFile sourcePath
+  text <- readFile' sourcePath
   case listToMaybe (scan dayTitleRegex text) of
     Just (_, [dayString, title]) ->
       return $ TOCEntry (read dayString) title url
