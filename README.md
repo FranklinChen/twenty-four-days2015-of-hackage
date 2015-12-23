@@ -38,3 +38,5 @@ list-fusion-probe; checking GHC's fusion rewrite rules for erasing intermediate 
 - Day 20: [dimensional: type-checked computation on physical quantities with units](http://conscientiousprogrammer.com/blog/2015/12/20/24-days-of-hackage-2015-day-20-dimensional-type-checked-computation-on-physical-quantities-with-units/)
 - Day 21: [hood, GHood, Hoed: observation oriented debugging in Haskell](http://conscientiousprogrammer.com/blog/2015/12/21/24-days-of-hackage-2015-day-21-hood-ghood-hoed-observation-oriented-debugging-in-haskell/)
 - Day 22: [Shake: the dynamic build system](http://conscientiousprogrammer.com/blog/2015/12/22/24-days-of-hackage-2015-day-22-shake-the-dynamic-build-system/)
+- Day 23: [Liquid Haskell: refinement
+types for the real world](http://conscientiousprogrammer.com/blog/2015/12/23/24-days-of-hackage-2015-day-23-liquid-haskell-refinement-types-for-the-real-world/)
