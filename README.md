@@ -40,6 +40,11 @@ list-fusion-probe; checking GHC's fusion rewrite rules for erasing intermediate 
 - Day 22: [Shake: the dynamic build system](http://conscientiousprogrammer.com/blog/2015/12/22/24-days-of-hackage-2015-day-22-shake-the-dynamic-build-system/)
 - Day 23: [Liquid Haskell: refinement
 types for the real world](http://conscientiousprogrammer.com/blog/2015/12/23/24-days-of-hackage-2015-day-23-liquid-haskell-refinement-types-for-the-real-world/)
+- Day 24: [conclusion and thanks](/blog/2015/12/24/24-days-of-hackage-2015-day-24-conclusion-and-thanks/)
 
 (Table of contents automatically generated using the day 22
 [Shake](http://shakebuild.com/) [code](https://github.com/FranklinChen/twenty-four-days2015-of-hackage/blob/master/app/ShakeExampleMain.hs))
+
+([The Haskell user group in Brazil](http://haskellbr.com/)'s
+translation of the series into
+Portuguese is included at their [blog](http://blog.haskellbr.com/).
