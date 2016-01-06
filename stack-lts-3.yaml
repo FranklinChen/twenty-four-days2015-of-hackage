@@ -1,7 +1,7 @@
 # For more information, see: https://github.com/commercialhaskell/stack/blob/release/doc/yaml_configuration.md
 
 # Specifies the GHC version and set of packages available (e.g., lts-3.5, nightly-2015-09-21, ghc-7.10.2)
-resolver: lts-4.0
+resolver: lts-3.20
 
 # Local packages, usually specified by relative directory name
 packages:
@@ -9,12 +9,24 @@ packages:
 
 # Packages to be pulled from upstream that are not in the resolver (e.g., acme-missiles-0.3)
 extra-deps:
+- should-not-typecheck-2.0.1
 - s-cargot-0.1.0.0
 
-# For IOSpec; needed for nightly and LTS 4
+# Use the latest version because fast-moving
+- Earley-0.10.1.0
+
+# For IOSpec; needed for nightly
 - IOSpec-0.3
 - Stream-0.4.7.2
 - lazysmallcheck-0.6
+
+# Because LTS 3 is at 0.10.12.3
+- vector-0.11.0.0
+
+# Because LTS 3 is way behind
+- dimensional-1.0.1.1
+- exact-pi-0.4.1.0
+- numtype-dk-0.5
 
 # hood, GHood, Hoed
 - hood-0.3
