@@ -17,6 +17,7 @@ env:
 #- ARGS="--resolver lts-2"
 - ARGS="--resolver lts-3 --stack-yaml stack-lts-3.yaml"
 - ARGS="--resolver lts-4"
+- ARGS="--resolver lts-5"
 - ARGS="--resolver lts"
 - ARGS="--resolver nightly"
 
