@@ -2,7 +2,7 @@
 
 module UnsafeListExample where
 
--- | <http://hackage.haskell.org/package/split split> utility library
+-- <http://hackage.haskell.org/package/split split> utility library
 import qualified Data.List.Split as Split
 
 main :: IO ()

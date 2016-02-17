@@ -4,7 +4,7 @@ module IOSpecExample where
 import Control.Monad (liftM)
 import Control.Monad.Loops (whileM_, unfoldM)
 
--- | Just add these imports, and replace all types
+-- Just add these imports, and replace all types
 -- 'IO a' with 'IOSpec Teletype a'
 import Prelude hiding (getLine, putStrLn)
 import Test.IOSpec (IOSpec, Teletype, getLine, putStrLn)

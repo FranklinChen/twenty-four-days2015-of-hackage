@@ -4,7 +4,7 @@
 
 module GHoodExample where
 
--- | GHood
+-- GHood
 import Debug.Observe (Observable(..), observe, observeBase, printO)
 
 import qualified Data.MultiSet as MultiSet

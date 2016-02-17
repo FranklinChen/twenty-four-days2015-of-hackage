@@ -2,13 +2,13 @@
 
 module NonEmptyListExample where
 
--- | <http://hackage.haskell.org/package/split split> utility library
+-- <http://hackage.haskell.org/package/split split> utility library
 import qualified Data.List.Split as Split
 
 import qualified Data.List.NonEmpty as NonEmpty
 import Data.List.NonEmpty (NonEmpty)
 
--- | Our utility module.
+-- Our utility module.
 import qualified Sort3
 
 main :: IO ()

@@ -4,7 +4,7 @@
 
 module HoodExample where
 
--- | hood
+-- hood
 import Debug.Hood.Observe (Observable(..), observe, observeBase, printO)
 
 import qualified Data.MultiSet as MultiSet
