@@ -77,17 +77,17 @@ matrix:
 #    compiler: ": #stack 7.8.4 osx"
 #    os: osx
 
-#  - env: BUILD=stack ARGS="--resolver lts-3 --stack-yaml stack-lts-3.yaml"
-#    compiler: ": #stack 7.10.2 osx"
-#    os: osx
+  - env: BUILD=stack ARGS="--resolver lts-3 --stack-yaml stack-lts-3.yaml"
+    compiler: ": #stack 7.10.2 osx"
+    os: osx
 
-#  - env: BUILD=stack ARGS="--resolver lts-5"
-#    compiler: ": #stack 7.10.3 osx"
-#    os: osx
+  - env: BUILD=stack ARGS="--resolver lts-5"
+    compiler: ": #stack 7.10.3 osx"
+    os: osx
 
-#  - env: BUILD=stack ARGS="--resolver nightly"
-#    compiler: ": #stack nightly osx"
-#    os: osx
+  - env: BUILD=stack ARGS="--resolver nightly"
+    compiler: ": #stack nightly osx"
+    os: osx
 
   allow_failures:
   - env: BUILD=cabal GHCVER=head  CABALVER=head
@@ -96,6 +96,13 @@ matrix:
 before_install:
 # Using compiler above sets CC to an invalid value, so unset it
 - unset CC
+- |
+  if [ `uname` = "Darwin" ]
+  then
+    brew update
+    brew install pcre
+    export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
+  fi
 
 # We want to always allow newer versions of packages when building on GHC HEAD
 - CABALARGS=""
