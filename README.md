@@ -48,3 +48,17 @@ types for the real world](http://conscientiousprogrammer.com/blog/2015/12/23/24-
 ([The Haskell user group in Brazil](http://haskellbr.com/)'s
 translation of the series into
 Portuguese is included at their [blog](http://blog.haskellbr.com/).
+
+## Build notes
+
+I use `pcre-heavy` which requires the C library `pcre`. On Mac OS X, install with
+
+```console
+$ brew install pcre
+```
+
+and make sure you have `PKG_CONFIG_PATH` set up in your shell startup file:
+
+```bash
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
+```
