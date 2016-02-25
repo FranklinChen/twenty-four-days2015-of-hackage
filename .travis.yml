@@ -134,6 +134,7 @@ install:
       ;;
   esac
 
+#      cabal configure --enable-tests --enable-benchmarks -v2 --ghc-options="-O0 -Werror"
 script:
 - |
   case "$BUILD" in
@@ -141,7 +142,6 @@ script:
       stack --no-terminal $ARGS test --haddock --no-haddock-deps
       ;;
     cabal)
-#      cabal configure --enable-tests --enable-benchmarks -v2 --ghc-options="-O0 -Werror"
       cabal configure --enable-tests --enable-benchmarks -v2 --ghc-options="-O0"
       cabal build
       cabal check || [ "$CABALVER" == "1.16" ]
