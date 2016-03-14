@@ -1,5 +1,5 @@
 #!/usr/bin/env stack
--- stack --resolver lts-5.7 --install-ghc runghc --package pcre-heavy
+-- stack --resolver lts-5.8 --install-ghc runghc --package pcre-heavy
 
 {-# LANGUAGE QuasiQuotes #-}
 
