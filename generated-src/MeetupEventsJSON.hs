@@ -16,6 +16,7 @@ import           Control.Applicative
 import           Data.Aeson.AutoType.Alternative
 import           Data.Aeson(decode, Value(..), FromJSON(..), ToJSON(..),
                             (.:), (.:?), (.=), object)
+import           Data.Monoid
 import           Data.Text (Text)
 import           GHC.Generics
 
@@ -24,14 +25,14 @@ o .:?? val = fmap join (o .:? val)
 
 
 data Group = Group { 
-    groupCreated :: Int,
+    groupCreated :: Double,
     groupWho :: Text,
     groupJoinMode :: Text,
-    groupGroupLat :: Int,
+    groupGroupLat :: Double,
     groupUrlname :: Text,
     groupName :: Text,
-    groupGroupLon :: Int,
-    groupId :: Int
+    groupGroupLon :: Double,
+    groupId :: Double
   } deriving (Show,Eq,Generic)
 
 
@@ -41,7 +42,7 @@ instance FromJSON Group where
 
 
 instance ToJSON Group where
-  toJSON (Group {..}) = object ["created" .= groupCreated, "who" .= groupWho, "join_mode" .= groupJoinMode, "group_lat" .= groupGroupLat, "urlname" .= groupUrlname, "name" .= groupName, "group_lon" .= groupGroupLon, "id" .= groupId]
+  toJSON     (Group {..}) = object ["created" .= groupCreated, "who" .= groupWho, "join_mode" .= groupJoinMode, "group_lat" .= groupGroupLat, "urlname" .= groupUrlname, "name" .= groupName, "group_lon" .= groupGroupLon, "id" .= groupId]
 
 
 data Venue = Venue { 
@@ -49,11 +50,11 @@ data Venue = Venue {
     venueState :: Text,
     venueCountry :: Text,
     venueZip :: (Maybe (Text:|:[(Maybe Value)])),
-    venueLat :: Int,
+    venueLat :: Double,
     venueName :: Text,
     venueCity :: Text,
-    venueId :: Int,
-    venueLon :: Int,
+    venueId :: Double,
+    venueLon :: Double,
     venueAddress1 :: Text
   } deriving (Show,Eq,Generic)
 
@@ -64,11 +65,11 @@ instance FromJSON Venue where
 
 
 instance ToJSON Venue where
-  toJSON (Venue {..}) = object ["repinned" .= venueRepinned, "state" .= venueState, "country" .= venueCountry, "zip" .= venueZip, "lat" .= venueLat, "name" .= venueName, "city" .= venueCity, "id" .= venueId, "lon" .= venueLon, "address_1" .= venueAddress1]
+  toJSON     (Venue {..}) = object ["repinned" .= venueRepinned, "state" .= venueState, "country" .= venueCountry, "zip" .= venueZip, "lat" .= venueLat, "name" .= venueName, "city" .= venueCity, "id" .= venueId, "lon" .= venueLon, "address_1" .= venueAddress1]
 
 
 data Fee = Fee { 
-    feeAmount :: Int,
+    feeAmount :: Double,
     feeRequired :: Text,
     feeCurrency :: Text,
     feeAccepts :: Text,
@@ -83,28 +84,28 @@ instance FromJSON Fee where
 
 
 instance ToJSON Fee where
-  toJSON (Fee {..}) = object ["amount" .= feeAmount, "required" .= feeRequired, "currency" .= feeCurrency, "accepts" .= feeAccepts, "description" .= feeDescription, "label" .= feeLabel]
+  toJSON     (Fee {..}) = object ["amount" .= feeAmount, "required" .= feeRequired, "currency" .= feeCurrency, "accepts" .= feeAccepts, "description" .= feeDescription, "label" .= feeLabel]
 
 
 data ResultsElt = ResultsElt { 
     resultsEltStatus :: Text,
     resultsEltGroup :: Group,
-    resultsEltTime :: Int,
-    resultsEltWaitlistCount :: Int,
+    resultsEltTime :: Double,
+    resultsEltWaitlistCount :: Double,
     resultsEltVenue :: (Maybe (Venue:|:[(Maybe Value)])),
-    resultsEltCreated :: Int,
-    resultsEltUtcOffset :: Int,
+    resultsEltCreated :: Double,
+    resultsEltUtcOffset :: Double,
     resultsEltEventUrl :: Text,
-    resultsEltYesRsvpCount :: Int,
-    resultsEltHeadcount :: Int,
+    resultsEltYesRsvpCount :: Double,
+    resultsEltHeadcount :: Double,
     resultsEltFee :: (Maybe (Fee:|:[(Maybe Value)])),
     resultsEltVisibility :: Text,
-    resultsEltMaybeRsvpCount :: Int,
+    resultsEltMaybeRsvpCount :: Double,
     resultsEltName :: Text,
     resultsEltId :: Text,
-    resultsEltRsvpLimit :: (Maybe (Int:|:[(Maybe Value)])),
-    resultsEltUpdated :: Int,
-    resultsEltDuration :: (Maybe (Int:|:[(Maybe Value)])),
+    resultsEltRsvpLimit :: (Maybe (Double:|:[(Maybe Value)])),
+    resultsEltUpdated :: Double,
+    resultsEltDuration :: (Maybe (Double:|:[(Maybe Value)])),
     resultsEltDescription :: (Maybe (Text:|:[(Maybe Value)]))
   } deriving (Show,Eq,Generic)
 
@@ -115,20 +116,20 @@ instance FromJSON ResultsElt where
 
 
 instance ToJSON ResultsElt where
-  toJSON (ResultsElt {..}) = object ["status" .= resultsEltStatus, "group" .= resultsEltGroup, "time" .= resultsEltTime, "waitlist_count" .= resultsEltWaitlistCount, "venue" .= resultsEltVenue, "created" .= resultsEltCreated, "utc_offset" .= resultsEltUtcOffset, "event_url" .= resultsEltEventUrl, "yes_rsvp_count" .= resultsEltYesRsvpCount, "headcount" .= resultsEltHeadcount, "fee" .= resultsEltFee, "visibility" .= resultsEltVisibility, "maybe_rsvp_count" .= resultsEltMaybeRsvpCount, "name" .= resultsEltName, "id" .= resultsEltId, "rsvp_limit" .= resultsEltRsvpLimit, "updated" .= resultsEltUpdated, "duration" .= resultsEltDuration, "description" .= resultsEltDescription]
+  toJSON     (ResultsElt {..}) = object ["status" .= resultsEltStatus, "group" .= resultsEltGroup, "time" .= resultsEltTime, "waitlist_count" .= resultsEltWaitlistCount, "venue" .= resultsEltVenue, "created" .= resultsEltCreated, "utc_offset" .= resultsEltUtcOffset, "event_url" .= resultsEltEventUrl, "yes_rsvp_count" .= resultsEltYesRsvpCount, "headcount" .= resultsEltHeadcount, "fee" .= resultsEltFee, "visibility" .= resultsEltVisibility, "maybe_rsvp_count" .= resultsEltMaybeRsvpCount, "name" .= resultsEltName, "id" .= resultsEltId, "rsvp_limit" .= resultsEltRsvpLimit, "updated" .= resultsEltUpdated, "duration" .= resultsEltDuration, "description" .= resultsEltDescription]
 
 
 data Meta = Meta { 
     metaNext :: Text,
     metaLink :: Text,
     metaUrl :: Text,
-    metaCount :: Int,
-    metaTotalCount :: Int,
+    metaCount :: Double,
+    metaTotalCount :: Double,
     metaLat :: Text,
     metaMethod :: Text,
     metaId :: Text,
     metaLon :: Text,
-    metaUpdated :: Int,
+    metaUpdated :: Double,
     metaTitle :: Text,
     metaDescription :: Text
   } deriving (Show,Eq,Generic)
@@ -140,7 +141,7 @@ instance FromJSON Meta where
 
 
 instance ToJSON Meta where
-  toJSON (Meta {..}) = object ["next" .= metaNext, "link" .= metaLink, "url" .= metaUrl, "count" .= metaCount, "total_count" .= metaTotalCount, "lat" .= metaLat, "method" .= metaMethod, "id" .= metaId, "lon" .= metaLon, "updated" .= metaUpdated, "title" .= metaTitle, "description" .= metaDescription]
+  toJSON     (Meta {..}) = object ["next" .= metaNext, "link" .= metaLink, "url" .= metaUrl, "count" .= metaCount, "total_count" .= metaTotalCount, "lat" .= metaLat, "method" .= metaMethod, "id" .= metaId, "lon" .= metaLon, "updated" .= metaUpdated, "title" .= metaTitle, "description" .= metaDescription]
 
 
 data TopLevel = TopLevel { 
@@ -155,7 +156,7 @@ instance FromJSON TopLevel where
 
 
 instance ToJSON TopLevel where
-  toJSON (TopLevel {..}) = object ["results" .= topLevelResults, "meta" .= topLevelMeta]
+  toJSON     (TopLevel {..}) = object ["results" .= topLevelResults, "meta" .= topLevelMeta]
 
 
 
