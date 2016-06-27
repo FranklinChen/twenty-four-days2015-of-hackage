@@ -15,11 +15,10 @@ import           Control.Monad      (forM_, mzero, join)
 import           Control.Applicative
 import           Data.Aeson.AutoType.Alternative
 import           Data.Aeson(decode, Value(..), FromJSON(..), ToJSON(..),
-                            pairs,
                             (.:), (.:?), (.=), object)
 import           Data.Monoid
 import           Data.Text (Text)
-import           GHC.Generics hiding (Meta)
+import           GHC.Generics
 
 -- | Workaround for https://github.com/bos/aeson/issues/287.
 o .:?? val = fmap join (o .:? val)
@@ -44,7 +43,6 @@ instance FromJSON Group where
 
 instance ToJSON Group where
   toJSON     (Group {..}) = object ["created" .= groupCreated, "who" .= groupWho, "join_mode" .= groupJoinMode, "group_lat" .= groupGroupLat, "urlname" .= groupUrlname, "name" .= groupName, "group_lon" .= groupGroupLon, "id" .= groupId]
-  toEncoding (Group {..}) = pairs  ("created" .= groupCreated<>"who" .= groupWho<>"join_mode" .= groupJoinMode<>"group_lat" .= groupGroupLat<>"urlname" .= groupUrlname<>"name" .= groupName<>"group_lon" .= groupGroupLon<>"id" .= groupId)
 
 
 data Venue = Venue { 
@@ -68,7 +66,6 @@ instance FromJSON Venue where
 
 instance ToJSON Venue where
   toJSON     (Venue {..}) = object ["repinned" .= venueRepinned, "state" .= venueState, "country" .= venueCountry, "zip" .= venueZip, "lat" .= venueLat, "name" .= venueName, "city" .= venueCity, "id" .= venueId, "lon" .= venueLon, "address_1" .= venueAddress1]
-  toEncoding (Venue {..}) = pairs  ("repinned" .= venueRepinned<>"state" .= venueState<>"country" .= venueCountry<>"zip" .= venueZip<>"lat" .= venueLat<>"name" .= venueName<>"city" .= venueCity<>"id" .= venueId<>"lon" .= venueLon<>"address_1" .= venueAddress1)
 
 
 data Fee = Fee { 
@@ -88,7 +85,6 @@ instance FromJSON Fee where
 
 instance ToJSON Fee where
   toJSON     (Fee {..}) = object ["amount" .= feeAmount, "required" .= feeRequired, "currency" .= feeCurrency, "accepts" .= feeAccepts, "description" .= feeDescription, "label" .= feeLabel]
-  toEncoding (Fee {..}) = pairs  ("amount" .= feeAmount<>"required" .= feeRequired<>"currency" .= feeCurrency<>"accepts" .= feeAccepts<>"description" .= feeDescription<>"label" .= feeLabel)
 
 
 data ResultsElt = ResultsElt { 
@@ -121,7 +117,6 @@ instance FromJSON ResultsElt where
 
 instance ToJSON ResultsElt where
   toJSON     (ResultsElt {..}) = object ["status" .= resultsEltStatus, "group" .= resultsEltGroup, "time" .= resultsEltTime, "waitlist_count" .= resultsEltWaitlistCount, "venue" .= resultsEltVenue, "created" .= resultsEltCreated, "utc_offset" .= resultsEltUtcOffset, "event_url" .= resultsEltEventUrl, "yes_rsvp_count" .= resultsEltYesRsvpCount, "headcount" .= resultsEltHeadcount, "fee" .= resultsEltFee, "visibility" .= resultsEltVisibility, "maybe_rsvp_count" .= resultsEltMaybeRsvpCount, "name" .= resultsEltName, "id" .= resultsEltId, "rsvp_limit" .= resultsEltRsvpLimit, "updated" .= resultsEltUpdated, "duration" .= resultsEltDuration, "description" .= resultsEltDescription]
-  toEncoding (ResultsElt {..}) = pairs  ("status" .= resultsEltStatus<>"group" .= resultsEltGroup<>"time" .= resultsEltTime<>"waitlist_count" .= resultsEltWaitlistCount<>"venue" .= resultsEltVenue<>"created" .= resultsEltCreated<>"utc_offset" .= resultsEltUtcOffset<>"event_url" .= resultsEltEventUrl<>"yes_rsvp_count" .= resultsEltYesRsvpCount<>"headcount" .= resultsEltHeadcount<>"fee" .= resultsEltFee<>"visibility" .= resultsEltVisibility<>"maybe_rsvp_count" .= resultsEltMaybeRsvpCount<>"name" .= resultsEltName<>"id" .= resultsEltId<>"rsvp_limit" .= resultsEltRsvpLimit<>"updated" .= resultsEltUpdated<>"duration" .= resultsEltDuration<>"description" .= resultsEltDescription)
 
 
 data Meta = Meta { 
@@ -147,7 +142,6 @@ instance FromJSON Meta where
 
 instance ToJSON Meta where
   toJSON     (Meta {..}) = object ["next" .= metaNext, "link" .= metaLink, "url" .= metaUrl, "count" .= metaCount, "total_count" .= metaTotalCount, "lat" .= metaLat, "method" .= metaMethod, "id" .= metaId, "lon" .= metaLon, "updated" .= metaUpdated, "title" .= metaTitle, "description" .= metaDescription]
-  toEncoding (Meta {..}) = pairs  ("next" .= metaNext<>"link" .= metaLink<>"url" .= metaUrl<>"count" .= metaCount<>"total_count" .= metaTotalCount<>"lat" .= metaLat<>"method" .= metaMethod<>"id" .= metaId<>"lon" .= metaLon<>"updated" .= metaUpdated<>"title" .= metaTitle<>"description" .= metaDescription)
 
 
 data TopLevel = TopLevel { 
@@ -163,7 +157,6 @@ instance FromJSON TopLevel where
 
 instance ToJSON TopLevel where
   toJSON     (TopLevel {..}) = object ["results" .= topLevelResults, "meta" .= topLevelMeta]
-  toEncoding (TopLevel {..}) = pairs  ("results" .= topLevelResults<>"meta" .= topLevelMeta)
 
 
 
