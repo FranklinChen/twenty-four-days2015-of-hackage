@@ -18,7 +18,7 @@ import           Data.Aeson(decode, Value(..), FromJSON(..), ToJSON(..),
                             (.:), (.:?), (.=), object)
 import           Data.Monoid
 import           Data.Text (Text)
-import           GHC.Generics
+import           GHC.Generics hiding (Meta)
 
 -- | Workaround for https://github.com/bos/aeson/issues/287.
 o .:?? val = fmap join (o .:? val)
